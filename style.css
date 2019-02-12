@@ -1,0 +1,40 @@
+body,
+html {
+  width: 100%;
+  height: 100%;
+  background-image: url("header.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+body {
+  text-align: center;
+   display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+}
+
+.container {
+	
+	justify-content: center;
+}
+
+hr {
+	margin-top: 150px;
+border-top: 3px solid #f05f44;
+width: 10%;
+}
+
+h1{
+	margin-bottom: 20px;
+}
+.btn-danger{
+	margin-top: 30px;
+	justify-content: center;
+	border-radius: 25px;
+	background-color: #f05f44;
+	padding: 1% 2% 1% 2%;
+}
