@@ -2,132 +2,519 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Projeto em HTML</title>
+	<title>Good Food | Food Good </title>
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400&display=swap" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="css/style.css"/>
 	<script type="text/javascript" src="animations2.js"></script>
-	
-	
+	<link rel="stylesheet" href="css/plyr.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<!--FAVICONS-->	
+	<link rel="icon" type="image/png" sizes="32x32" href="Favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="Favicon/favicon-16x16.png">
 </head>
 
-
+	
 <body onload="appear()">
+
+<!--CABEÇALHO-->
 	<div id="interface">
 		<header id="cabecalho">
-			<div class="titulo"><img src="img/logoPequena2.png" alt=""></div>
-			<div class="menu"><img src="img/hamburger-menu.png" class="hamburger"/></div>
+			<div class="titulo" id="titulo" onmouseover="mouseTitulo()" onmouseout="mouseoutTitulo()" onclick="recomecar()"><img src="img/logoPequena2.png" alt=""></div>
+			<div class="tituloSubmenuTopo" id="tituloSubmenuTopoEfeito"><p>EFEITOS</p></div>
+			<div class="tituloSubmenuTopo" id="tituloSubmenuTopoRepense"><p>REPENSE</p></div>
+			<div class="tituloSubmenuTopo" id="tituloSubmenuTopoDesafios"><p>DESAFIOS</p></div>
+			<div class="tituloSubmenuTopo" id="tituloSubmenuTopoIniciativas"><p>INICIATIVAS</p></div>
+			<div class="menu" ><img onclick="showMenu()" src="img/hamburger-menu.png" class="hamburger"/></div>
 		</header>
 
-
-	<div id="videoContainer">
-			<img class="fecharContainer" src="img/fechar.png" />
-	    </div>
-
-	    <div id="videoPlayerContainer">
-	    	<div id="bigYellowTitle">
-		            <div class="verticalCentered">
-		            	
-		            </div>
-		            <div class="theTitle">
-		            	
-		            </div>
-		    </div>
-		    <video id="videoplayer" playsinline preload="auto">
-		        <source id="mp4track"
-		            type="video/mp4">
-		    </video>
-
+<!--MENU HAMBURGUER-->
+	<!--OPÇÕES MENU-->
+		<div id="overlayMenu" >
+    		<div id="menuprafechar"><img onmouseover="mouseFecharHamburger()" onmouseout="mouseoutFecharHamburger()" onclick="fecharmenuhamburger()" src="img/fechar.png" alt=""></div>
+      		<ul id="itensMenu">
+	            <li onclick="sobre()">SOBRE</li>
+				<li onclick="creditos()">AGRADECIMENTOS</li>
+				<li onclick="producao()">PRODUÇÃO</li>
+	        </ul>
 		</div>
-	    <div id="mainvideo">
-	        <div id="mainvideotimeline">
-	            <div id="mainvideotimelinefragment">
-	                <div id="mainvideotimelineprogress"></div>
-	            </div>
-	        </div>
-	        <div class="darken"></div>
-	        <canvas id="pauzebeeld"></canvas>
-	    </div>
-	    
-	</div>	
+				
+		<!--SUBMENU HAMBURGUER: SOBRE-->		
+		<div id="sobreContainer" class="submenuHamburger">
+			<div class="hamburgerTitulo" id="sobreTitulo">SOBRE</div>
+			<div class="hamburgerCorpo" id="sobreCorpo"><p>O desperdício alimentar é um problema de gigantes proporções no mundo todo. Mas existem pessoas e iniciativas que utilizam criatividade e paixão para combater essa problemática.</p><p>A partir dessa realização, surgiu um interesse em explorar o cenário do aproveitamento alimentar em Portugal e, mais especificamente, na cidade do Porto.</p><p>Em esse processo aprendemos que há muito trabalho a ser feitos por todos nós. Produtores, distribuidores, comerciantes e consumidores devem unir forças com o governo para fazer uma mudança real. Ao mesmo tempo, percebemos o quanto já se caminhou na direção de um futuro mais sustentável.</p><p>Esperamos que Good Food | Food Good dê uma ideia das diferentes formas que podemos combater o desperdício alimentar. Que cada um de nós se sinta empoderado para fazer a sua parte!</p></div>
+		</div>
+
+		<!--SUBMENU HAMBURGUER: CRÉDITOS E AGRADECIMENTOS-->
+		<div id="creditosContainer" class="submenuHamburger">
+			<div class="hamburgerTitulo" id="creditosTitulo">AGRADECIMENTOS</div>
+			<div class="hamburgerCorpo" id="creditosCorpo"><p>Agradecemos a todos que participaram e ajudaram na realização do Good Food | Food Good!</p><p>Aos docentes da unidade curricular <i>Atelier Multimedia</i>, no âmbito da Licenciatura em Ciências da Comunicação na Universidade do Porto:<br>Professor Alexandre Valle de Carvalho<br>Professora Cristina Ferreira<br>Professor Pedro Gomes da Costa<br>Professor José Alberto Pinto</p>
+			<p>Às equipes das iniciativas entrevistadas, que disponibilizaram seu tempo e nos receberam amavelmente:<br>Susana Freitas - Lipor<br>Bruno Martins e toda a equipa - Fruta Feia<br>Chantal Camps de Gispert - GoodAfter<br>Carlos Pereira e Mariana Fernandes - FairMeals</p>
+			</div>
+		</div>
+
+		<!--SUBMENU HAMBURGUER: PRODUÇÃO-->
+		<div id="producaoContainer" class="submenuHamburger">
+			<div class="hamburgerTitulo" id="producaoTitulo">PRODUÇÃO</div>
+			<div class="hamburgerCorpo" id="producaoCorpo">
+				<div class="container">
+					<div class="wrapper" onmouseover="mouseMaira()" onmouseout="mouseoutMaira()">
+						<img class="coluna" id="maira" src="img/profile_maira.jpg" onmouseover="mouseMaira()" onmouseout="mouseoutMaira()">
+						<div class="textoImagens" id="textoMaira">
+							<p><b>Maira Salazar</b></p>
+							<p>Nas horas vagas adora provar novas receitas veganas</p>
+							<p>Sonha em viajar o mundo com seu irmão Pietro</p>
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="wrapper" onmouseover="mouseLuanna()" onmouseout="mouseoutLuanna()">
+						<img class="coluna" id="luanna" src="img/profile_luanna.jpg" >
+						<div class="textoImagens" id="textoLuanna">
+							<p><b>Luanna Mendes</b></p>
+							<p>Ama desafios e conhecer coisas novas</p>
+							<p>Sonha em se tornar uma profissional de sucesso</p>
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="wrapper"  onmouseover="mouseFran()" onmouseout="mouseoutFran()">
+						<img class="coluna" id="fran" src="img/profile_fran.jpg">
+						<div class="textoImagens" id="textoFran">
+						<p><b>Francini Monteiro</b></p>
+						<p>Brasileira apaixonada pelo Brasil, mas que ama conhecer lugares e culturas novas</p>
+						<p>Sonha em um dia trabalhar com moda e comunicação</p></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	
+	
+
 <!--MENU PRINCIPAL-->
 	<div id="home">
 		<div class="container" >
-			<div class="wrapper">
+			<div class="wrapper" onclick="verde(this); abrirEfeitos()">
 				<img class="coluna" id="efeitos" src="img/EfeitosMenu2.jpg" onclick="abrirEfeitos()" onmouseover="mouseCliqueEfeitos()" onmouseout="mouseoutEfeitos()"> 
 				<div class="titulosMenus">EFEITOS</div>
 			</div>
 		</div>
 		<div class="container">
-			<div class="wrapper">
-				<img class="coluna" id="iniciativas" src="img/iniciativasMenu3.jpg" onclick="abrirIniciativas()" onmouseover="mouseCliqueIniciativas()" onmouseout="mouseoutIniciativas()"> 
+			<div class="wrapper" onclick="verde(this); abrirIniciativas()">
+				<img class="coluna" id="iniciativas" src="img/iniciativasMenu2.jpg" onmouseover="mouseCliqueIniciativas()" onmouseout="mouseoutIniciativas()"> 
 				<div class="titulosMenus">INICIATIVAS</div>
 			</div>
 		</div>
 		<div class="container">
-			<div class="wrapper">
-				<img class="coluna" id="desafios" src="img/DesafiosMenu2.jpg" onclick="abrirDesafios()" onmouseover="mouseCliqueDesafios()" onmouseout="mouseoutDesafios()"> 
+			<div class="wrapper" onclick="verde(this); abrirDesafios()">
+				<img class="coluna" id="desafios" src="img/DesafiosMenu2.jpg" onmouseover="mouseCliqueDesafios()" onmouseout="mouseoutDesafios()"> 
 				<div class="titulosMenus">DESAFIOS</div>
 			</div>
 		</div>
 		<div class="container">
-			<div class="wrapper">
-				<img class="coluna" id="repense" src="img/RepenseMenu2.jpg" onclick="abrirRepense()" onmouseover="mouseCliqueRepense()" onmouseout="mouseoutRepense()"> 
+			<div class="wrapper" onclick="verde(this); abrirRepense()">
+				<img class="coluna" id="repense" src="img/RepenseMenu2.jpg" onmouseover="mouseCliqueRepense()" onmouseout="mouseoutRepense()"> 
 				<div class="titulosMenus">REPENSE</div>
 			</div>
 		</div>
 	</div>
 	
 
-<!--EFEITOS-->
-	<div id="submenuEfeitos">
+<!--MENU EFEITOS-->
+	<div class="subs" id="submenuEfeitos">
+		
 		<div class="container" >
-			<div class="wrapper">
-				<img class="coluna" id="ambiente" src="img/Ambiente.jpg" onclick="abrirAmbiente()" onmouseover="mouseCliqueAmbiente()" onmouseout="mouseoutAmbiente()"> 
+			<div class="wrapper" onclick="verde(this); abrirAmbiente()">
+				<img class="coluna" id="ambiente" src="img/Ambiente.jpg" onmouseover="mouseCliqueAmbiente()" onmouseout="mouseoutAmbiente()" > 
 				<div class="titulosMenus">AMBIENTE</div>
 			</div>
 		</div>
 		<div class="container">
-			<div class="wrapper">
-				<img class="coluna" id="fome" src="img/Fome.jpg" onclick="abrirFome()" onmouseover="mouseCliqueFome()" onmouseout="mouseoutFome()"> 
+			<div class="wrapper" onclick="verde(this); abrirFome()">
+				<img class="coluna" id="fome" src="img/Fome.jpg" onmouseover="mouseCliqueFome()" onmouseout="mouseoutFome()"> 
 				<div class="titulosMenus">FOME</div>
 			</div>
 		</div>
 		<div class="container">
-			<div class="wrapper">
-				<img class="coluna" id="industria" src="img/Industria.jpg" onclick="abrirIndustria()" onmouseover="mouseCliqueIndustria()" onmouseout="mouseoutIndustria()"> 
+			<div class="wrapper" onclick="verde(this); abrirIndustria()">
+				<img class="coluna" id="industria" src="img/Industria.jpg" onmouseover="mouseCliqueIndustria()" onmouseout="mouseoutIndustria()"> 
 				<div class="titulosMenus">INDÚSTRIA</div>
 			</div>
 		</div>
 		<div class="container">
-			<div class="wrapper">
-				<img class="coluna" id="casa" src="img/Casa.jpg" onclick="abrirCasa()" onmouseover="mouseCliqueCasa()" onmouseout="mouseoutCasa()"> 
+			<div class="wrapper" onclick="verde(this); abrirCasa()">
+				<img class="coluna" id="casa" src="img/Casa.jpg" onmouseover="mouseCliqueCasa()" onmouseout="mouseoutCasa()"> 
 				<div class="titulosMenus">EM CASA</div>
 			</div>
+		</div>
+		<div><img class="fecharContainer" id="fecharContainerEfeitos" onclick="voltarMenu()" onmouseover="mouseFechar()" onmouseout="mouseoutFechar()" src="img/fechar.png"></div>
+	</div>
+
+<!--SUBMENU EFEITOS: FOME-->
+	<div class="submenusDosEfeitos subs" id="fomeSubmenu">
+		<img class="fecharContainer" id="fecharContainerFomeEfeitos" onclick="voltarEfeitos()" onmouseover="mouseFechar()" onmouseout="mouseoutFechar()" src="img/fechar.png">
+		<div class="SubmenuWrapper">
+			<div></div>
+			<div>
+				<p>De acordo com o Global Hunger Index (GHI)</p>
+				<img class = "galeryimage" src="img/planeta.png" alt="">
+				<p class="maior margemMenorBaixo">52 de 119 países</p><p>ainda enfrentam  problemas de má nutrição em nível grave, muito grave ou extremo.</p>
+			</div>
+			<div></div>
+			<div>
+				<p>o que significa que</p><p class="maior margemMenorCimaBaixo">1 em cada 9</p><p>pessoas (815 milhões pelo mundo) sofrem de fome!</p>
+				<img class = "galeryimage quote" src="img/fomequote.png" alt="">
+			</div>
+			<div></div>
+		</div>
+	</div>
+	
+<!--SUBMENU EFEITOS: AMBIENTE-->
+	<div class="submenusDosEfeitos subs" id="ambienteSubmenu">
+		<img class="fecharContainer" id="fecharContainerAmbienteEfeitos" onclick="voltarEfeitos()" onmouseover="mouseFechar()" onmouseout="mouseoutFechar()" src="img/fechar.png">
+		<div class="SubmenuWrapper">
+			<div></div>
+			<div>
+				<p>A degradação do alimento desperdiçado é um grande emissor de gases que geram o efeito estufa.</p>
+				<img class = "galeryimage" src="img/lixo.png" alt="">
+				<p>Em escala global, o óxido nitroso e o metano resultantes são tão nocivos quanto à poluição por dióxido de carbono causada pelos carros.</p>
+			</div>
+			<div></div>
+			<div>
+				<p>A ONG World Resources Institute (WRI) aponta que</p><p class="maior margemMenorCimaBaixo">1/3 dos alimentos</p><p>produzidos mundialmente são perdidos os desperdiçados.</p>
+				<img class = "galeryimage quote" src="img/ambientequote.png" alt="">
+			</div>
+			<div></div>
+		</div>
+	</div>
+
+	<!--SUBMENU EFEITOS: INDÚSTRIA-->
+	<div class="submenusDosEfeitos subs" id="industriaSubmenu">
+		<img class="fecharContainer" id="fecharContainerIndustriaEfeitos" onclick="voltarEfeitos()" onmouseover="mouseFechar()" onmouseout="mouseoutFechar()" src="img/fechar.png">
+		<div class="SubmenuWrapper">
+			<div></div>
+			<div>
+				<p>Em Portugal, desperdiça-se<p class="maior margemMenorCimaBaixo">17% do consumo</p><p>alimentar anual, de acordo com a Federação das Indústrias Portuguesas Agro-Alimentares.</p>
+				<img class = "galeryimage" src="img/restaurante.png" alt="">
+				<p>Isso é equivalente a 1 milhão de toneladas.</p>
+			</div>
+			<div></div>
+			<div>
+				<p>Na restauração, esta perda anual é de aproximadamente</p><p class="maior margemMenorCimaBaixo">9600 Euros</p><p>por estabelecimento.</p>
+				<img class = "galeryimage quote" src="img/industriaquote.png" alt="">
+			</div>
+			<div></div>
+		</div>
+	</div>
+
+<!--SUBMENU EFEITOS: EM CASA-->
+	<div class="submenusDosEfeitos subs" id="casaSubmenu">
+		<img class="fecharContainer" id="fecharContainerCasaEfeitos" onclick="voltarEfeitos()" onmouseover="mouseFechar()" onmouseout="mouseoutFechar()" src="img/fechar.png">
+		<div class="SubmenuWrapper">
+			<div></div>
+			<div>
+				<p>Anualmente são desperdiçadas<p class="maior margemMenorCimaBaixo">cerca de 324 mil toneladas</p><p>de alimentos nas casas portuguesas.</p>
+				<img class = "galeryimage" src="img/casa.png" alt="">
+				<p>Além de contribuir para os nocivos efeitos ambientais, tal desperdício tem impacto no orçamento familiar. </p>
+			</div>
+			<div></div>
+			<div>
+				<p>Isso equivale a</p><p class="maior margemMenorCimaBaixo">mais de 40%</p><p>do desperdício do país, de acordo com a Divisão de Organização da Produção Agroalimentar do Ministério da Agricultura.</p>
+				<img class = "galeryimage quote" src="img/casaquote.png" alt="">
+			</div>
+			<div></div>
 		</div>
 	</div>
 
 
-	<script>
-		// CRIAR IMAGEM DA LOGO
+<!--MENU INICIATIVAS-->
+	<div class="subs" id="submenuIniciativas">		
+		<div class="container" >
+			<div class="wrapper" onclick="verde(this); abrirFrutaFeia()">
+				<img class="coluna" id="frutaFeia" src="img/Frutafeia.jpg" onmouseover="mouseCliqueFrutaFeia()" onmouseout="mouseoutFrutaFeia()" > 
+				<div class="titulosMenus">FRUTA FEIA</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="wrapper" onclick="verde(this); abrirLipor()">
+				<img class="coluna" id="lipor" src="img/Lipor.jpg" onmouseover="mouseCliqueLipor()" onmouseout="mouseoutLipor()"> 
+				<div class="titulosMenus">LIPOR</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="wrapper" onclick="verde(this); abrirFairMeals()">
+				<img class="coluna" id="fairMeals" src="img/Fairmeals.jpg" onmouseover="mouseCliqueFairMeals()" onmouseout="mouseoutFairMeals()"> 
+				<div class="titulosMenus">FAIRMEALS</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="wrapper" onclick="verde(this); abrirGoodAfter()">
+				<img class="coluna" id="goodAfter" src="img/Goodafter.jpg" onmouseover="mouseCliqueGoodAfter()" onmouseout="mouseoutGoodAfter()"> 
+				<div class="titulosMenus">GOODAFTER</div>
+			</div>
+		</div>
+		<div><img class="fecharContainer" id="fecharContainerIniciativas" onclick="voltarMenu()" onmouseover="mouseFechar()" onmouseout="mouseoutFechar()" src="img/fechar.png"></div>
+	</div>
 
+
+<!--MENU REPENSE-->
+	<div class="subs" id="submenuRepense">		
+		<div class="container" >
+			<div class="wrapper" onclick="verde(this); abrirBolo()">
+				<img class="coluna" id="bolo" src="img/Bolo.jpg" onmouseover="mouseCliqueBolo()" onmouseout="mouseoutBolo()" > 
+				<div class="titulosMenus">BOLO DE RESÍDUO DE SEMENTE DE GIRASSOL</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="wrapper" onclick="verde(this); abrirCasca()">
+				<img class="coluna" id="casca" src="img/Casca.jpg" onmouseover="mouseCliqueCasca()" onmouseout="mouseoutCasca()"> 
+				<div class="titulosMenus">CHIPS DE CASCA DE BATATA E BATATA-DOCE</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="wrapper" onclick="verde(this); abrirTapenade()">
+				<img class="coluna" id="tapenade" src="img/Tapenade.jpg" onmouseover="mouseCliqueTapenade()" onmouseout="mouseoutTapenade()"> 
+				<div class="titulosMenus">CAPONATA DE CASCA DE BANANA</div>
+			</div>
+		</div>
+		<div><img class="fecharContainer" id="fecharContainerRepense" onclick="voltarMenu()" onmouseover="mouseFechar()" onmouseout="mouseoutFechar()" src="img/fechar.png"></div>
+	</div>
+
+
+<!--MENU DESAFIOS-->
+	<div class="subs" id="submenuDesafios">		
+		<div class="container" >
+			<div class="wrapper" onclick="verde(this); abrirSeguranca()">
+				<img class="coluna" id="seguranca" src="img/Seguranca.jpg" onmouseover="mouseCliqueSeguranca()" onmouseout="mouseoutSeguranca()" > 
+				<div class="titulosMenus">LEGISLAÇÃO</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="wrapper" onclick="verde(this); abrirMentalidade()">
+				<img class="coluna" id="mentalidade" src="img/Mentalidade.jpg" onmouseover="mouseCliqueMentalidade()" onmouseout="mouseoutMentalidade()"> 
+				<div class="titulosMenus">MENTALIDADE</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="wrapper" onclick="verde(this); abrirNutricao()">
+				<img class="coluna" id="nutricao" src="img/Nutricao.jpg" onmouseover="mouseCliqueNutricao()" onmouseout="mouseoutNutricao()"> 
+				<div class="titulosMenus">NUTRIÇÃO</div>
+			</div>
+		</div>
+		<div><img class="fecharContainer" id="fecharContainerRepense" onclick="voltarMenu()" onmouseover="mouseFechar()" onmouseout="mouseoutFechar()" src="img/fechar.png"></div>
+	</div>
+
+	<!--SUBMENU DESAFIOS: SEGURANÇA-->
+	<div class="submenusDosDesafios subs" id="segurancaSubmenu1">
+		<img class="fecharContainer" onclick="voltarDesafios()" onmouseover="mouseFechar()" onmouseout="mouseoutFechar()" src="img/fechar.png">
+		<div class="SubmenuWrapperDesafios">
+			<div></div>
+			<div>		
+				<p>Quando a doação ou aproveitamento de alimentos encontra <b>obstáculos legislativos</b> relacionados à responsabilidade civil, saúde pública, higiene alimentar e defesa do consumidor, a luta contra o desperdício alimentar pode ser prejudicada.</p>
+				<p>De acordo com o Parlamento Europeu, “Os Estados-Membros devem fornecer incentivos para a prevenção dos resíduos alimentares, tais como a celebração de acordos voluntários [e] a facilitação da doação de alimentos.”</p>
+				<p>Em Portugal, estão em vigor regras de higiene e segurança alimentar no âmbito da doação de alimentos, de forma a garantir a segurança dos géneros alimentícios, desde o momento de produção do mesmo até a doação.</p>
+				<p>As entidades doadoras devem escolher com cuidado os géneros alimentícios que irão doar. As entidades recetoras devem estabelecer procedimentos adequados desde a receção, até o reencaminhamento dos alimentos para o seu destino final.</p>
+			</div>
+			<div class="seta"><img onclick="direitaSeguranca()" onmouseover="mouseSeta()" onmouseout="mouseoutSeta()" src="img/setaDireita.png" alt=""></div>
+		</div>	
+	</div>
+	<div class="submenusDosDesafios subs" id="segurancaSubmenu2">
+		<img class="fecharContainer"  onclick="voltarDesafios()" onmouseover="mouseFechar()" onmouseout="mouseoutFechar()" src="img/fechar.png">
+		<div class="SubmenuWrapperDesafios" id="seguranca2">
+			<div><img class="seta" onclick="esquerdaSeguranca()" onmouseover="mouseSeta()" onmouseout="mouseoutSeta()" src="img/setaEsquerda.png" alt=""></div>
+			<div>
+				<p><b>O que podemos fazer como consumidores?</b></p>
+				<p>Pergunte se seus estabelecimentos favoritos fazem parte de algum programa de doação de alimentos. É possível contribuir para o aproveitamento alimentar sem correr riscos legais, especialmente por meio de parcerias com iniciativas já estabelecidas.</p>
+				<p>Exemplos incluem: <a href="https://www.re-food.org/pt">Refood</a>, <a href="http://www.zerodesperdicio.pt/">Zero Desperdício</a> ou <a href="https://fairmeals.pt">FairMeals</a>.</p>
+			</div>			
+			<div></div>
+		</div>
+	</div>
+	
+	<!--SUBMENU DESAFIOS: MENTALIDADE-->
+	<div class="submenusDosDesafio subs" id="mentalidadeSubmenu1">
+		<img class="fecharContainer" onclick="voltarDesafios()" onmouseover="mouseFechar()" onmouseout="mouseoutFechar()" src="img/fechar.png">
+		<div class="SubmenuWrapperDesafios">
+			<div></div>
+			<div>		
+				<p>No relatório Do Campo ao Garfo, divulgado pelo Projecto de Estudo e Reflexão sobre o Desperdício Alimentar (PERDA), fica claro que há ainda uma falta de sensibilização e consciência do problema de desperdício alimentar, principalmente no âmbito familiar e do consumidor final.</p>
+				<p>Em seus inquéritos, indicam que uma das principais causas de desperdício nas famílias está ligado a cozinhar demais. A razão é que cozinhar demais é preferível do que o risco de cozinhar “de menos”. A ideia de fartura está presente nas relações familiares. Além disso, mesmo quando há a intenção de guardar e reaproveitar o que sobra, muitas vezes a sobra acaba indo pro lixo por esquecimento.</p>
+				<p>A <b>mentalidade</b> também é um desafio no combate ao desperdício na restauração. Porções excessivamente grandes podem ser um atrativo para os clientes. A abundância pode se tornar desperdício se as sobras da refeição não são levadas para casa. Mudar esses hábitos por parte dos estabelecimentos e dos consumidores é um passo importante para o combate ao desperdício.</p>
+				
+			</div>
+			<div class="seta"><img onclick="direitaMentalidade()" onmouseover="mouseSeta()" onmouseout="mouseoutSeta()" src="img/setaDireita.png" alt=""></div>
+		</div>	
+	</div>
+	<div class="submenusDosDesafios subs" id="mentalidadeSubmenu2">
+		<img class="fecharContainer" onclick="voltarDesafios()" onmouseover="mouseFechar()" onmouseout="mouseoutFechar()" src="img/fechar.png">
+		<div class="SubmenuWrapperDesafios">
+			<div><img class="seta" onclick="esquerdaMentalidade()" onmouseover="mouseSeta()" onmouseout="mouseoutSeta()" src="img/setaEsquerda.png" alt=""></div>
+			<div>
+				<p><b>O que podemos fazer como consumidores?</b></p>
+				<p>Planeie no momento das compras alimentares e no preparo dos alimentos.</p>
+				<p>Evite compras de grandes quantidades em promoções ou ofertas se não acredita que será capaz de consumir tudo.</p>
+				<p>Leve sobras de refeições para casa. Se houver sobras nas refeições que faz em casa, armazene e consuma posteriormente.</p>
+				<p>Verifique a possibilidade de comprar produtos aptos para consumo mas que já passaram a data preferencial de consumo, como os comercializados legalmente pelo supermercado online <a href="https://goodafter.com/pt/">Good After</a>.</p>
+			</div>			
+			<div></div>
+		</div>
+	</div>
+
+	<!--SUBMENU DESAFIOS: NUTRIÇÃO-->
+	<div class="submenusDosDesafios subs" id="nutricaoSubmenu1">
+		<img class="fecharContainer" onclick="voltarDesafios()" onmouseover="mouseFechar()" onmouseout="mouseoutFechar()" src="img/fechar.png">
+		<div class="SubmenuWrapperDesafios">
+			<div></div>
+			<div>		
+				<p>Qual é a <b>qualidade nutricional</b> dos alimentos que são reaproveitados atualmente?</p>
+				<p>O professor Pedro Graça, Diretor da Faculdade de Ciências da Nutrição e Alimentação da Universidade do Porto, levanta uma <a href="http://visao.sapo.pt/opiniao/bolsa-de-especialistas/2019-02-20-A-caridade-alimentar-em-Portugal">importante questão</a> em relação a qualidade dos alimentos reintroduzidos na cadeia alimentar.</p>
+				<p>O Professor Pedro Graça aponta que esses alimentares hipercalóricos, embalados e processados vão parar ao prato dos mais pobres e iletrados. Assim, o combate ao desperdício alimentar corre o risco, em alguns casos, corre o risco de se transformar na redistribuição de produtos de má qualidade nutricional daqueles que compram mais do que devem para aqueles que não conseguem comer.</p>
+				<p>Duas causas para esse desafio são: a canalização de alimentos altamente processados além da falta de nutricionistas e técnicos de saúde nos sistemas de doação; e a falta de informação para que as famílias transformem os alimentos recebidos em uma refeição equilibrada.</p>
+			</div>
+			<div class="seta"><img onclick="direitaNutricao()" onmouseover="mouseSeta()" onmouseout="mouseoutSeta()" src="img/setaDireita.png" alt=""></div>
+		</div>	
+	</div>
+	<div class="submenusDosDesafios subs" id="nutricaoSubmenu2">
+		<img class="fecharContainer" onclick="voltarDesafios()" onmouseover="mouseFechar()" onmouseout="mouseoutFechar()" src="img/fechar.png">
+		<div class="SubmenuWrapperDesafios">
+			<div><img class="seta" onclick="esquerdaNutricao()" onmouseover="mouseSeta()" onmouseout="mouseoutSeta()" src="img/setaEsquerda.png" alt=""></div>
+			<div>
+				<p><b>O que podemos fazer como consumidores?</b></p>
+				<p>Ao doar alimentos para bancos alimentares, priorizar alimentos menos processados e de maior qualidade nutricional.</p>
+				<p>Pressionar seus representantes políticos por investimentos em projetos que conciliem o aproveitamento alimentar e a qualidade nutricional.</p>
+				<p>Ao escolher um projeto para apoiar por meio de voluntariado ou doações, optar por aqueles que integram oferta alimentar equilibrada e capacitação nutricional das pessoas mais carenciadas, ao invés de projetos de “caridade avulsa”.</p>
+			</div>			
+			<div></div>
+		</div>
+	</div>
+
+
+	<!--ESTRUTURA PARA OS VÍDEOS DE INICIATIVAS-->
+	<div id="videoContainerFrutaFeia" class="videoContainer subs">
+			<div id="voltarIniciativas"><img class="fecharContainer" onclick="voltarIniciativas()" onmouseover="mouseFechar()" onmouseout="mouseoutFechar()" src="img/fechar.png" /></div>
+			<div class="containerVideoPlyr">
+				<div class="plyr__video-embed" id="playerFrutaFeia">
+				    <iframe id="arquivoVideoFrutaFeia" 
+				        src=""
+				        allowfullscreen
+				        allowtransparency
+				        allow="autoplay"
+				    ></iframe>
+				</div>
+			</div>
+    </div>	
+
+    <div id="videoContainerLipor" class="videoContainer subs">
+			<div id="voltarIniciativas"><img class="fecharContainer" onclick="voltarIniciativas()" onmouseover="mouseFechar()" onmouseout="mouseoutFechar()" src="img/fechar.png" /></div>
+			<div class="containerVideoPlyr">
+				<div class="plyr__video-embed" id="playerLipor">
+				    <iframe id="arquivoVideoLipor" 
+				        src=""
+				        allowfullscreen
+				        allowtransparency
+				        allow="autoplay"
+				    ></iframe>
+				</div>
+			</div>
+    </div>	
+
+	<div id="videoContainerFairMeals" class="videoContainer subs">
+			<div id="voltarIniciativas"><img class="fecharContainer" onclick="voltarIniciativas()" onmouseover="mouseFechar()" onmouseout="mouseoutFechar()" src="img/fechar.png" /></div>
+			<div class="containerVideoPlyr">
+				<div class="plyr__video-embed" id="playerFairMeals">
+				    <iframe id="arquivoVideoFairMeals" 
+				        src=""
+				        allowfullscreen
+				        allowtransparency
+				        allow="autoplay"
+				    ></iframe>
+				</div>
+			</div>
+    </div>	
+
+    <div id="videoContainerGoodAfter" class="videoContainer subs">
+			<div id="voltarIniciativas"><img class="fecharContainer" onclick="voltarIniciativas()" onmouseover="mouseFechar()" onmouseout="mouseoutFechar()" src="img/fechar.png" /></div>
+			<div class="containerVideoPlyr">
+				<div class="plyr__video-embed" id="playerGoodAfter">
+				    <iframe id="arquivoVideoGoodAfter" 
+				        src=""
+				        allowfullscreen
+				        allowtransparency
+				        allow="autoplay"
+				    ></iframe>
+				</div>
+			</div>
+    </div>	
+
+
+    <!--ESTRUTURA PARA OS VÍDEOS DE REPENSE-->
+	<div id="videoContainerBolo" class="videoContainer subs">
+			<div id="voltarRepense"><img class="fecharContainer" onclick="voltarRepense()" onmouseover="mouseFechar()" onmouseout="mouseoutFechar()" src="img/fechar.png" /></div>
+			<div class="containerVideoPlyr">
+				<div class="plyr__video-embed" id="playerBolo">
+				    <iframe id="arquivoVideoBolo" 
+				        src=""
+				        allowfullscreen
+				        allowtransparency
+				        allow="autoplay"
+				    ></iframe>
+				</div>
+			</div>
+    </div>	
+
+    <div id="videoContainerCasca" class="videoContainer subs">
+			<div id="voltarRepense"><img class="fecharContainer" onclick="voltarRepense()" onmouseover="mouseFechar()" onmouseout="mouseoutFechar()" src="img/fechar.png" /></div>
+			<div class="containerVideoPlyr">
+				<div class="plyr__video-embed" id="playerCasca">
+				    <iframe id="arquivoVideoCasca" 
+				        src=""
+				        allowfullscreen
+				        allowtransparency
+				        allow="autoplay"
+				    ></iframe>
+				</div>
+			</div>
+    </div>
+
+    <div id="videoContainerTapenade" class="videoContainer subs">
+			<div id="voltarRepense"><img class="fecharContainer" onclick="voltarRepense()" onmouseover="mouseFechar()" onmouseout="mouseoutFechar()" src="img/fechar.png" /></div>
+			<div class="containerVideoPlyr">
+				<div class="plyr__video-embed" id="playerTapenade">
+				    <iframe id="arquivoVideoTapenade" 
+				        src=""
+				        allowfullscreen
+				        allowtransparency
+				        allow="autoplay"
+				    ></iframe>
+				</div>
+			</div>
+    </div>
+
+
+	<script>
+
+	// CRIAR IMAGEM DA LOGO VERDE - PARTE DE CIMA
 		var divLogo = document.createElement("div");
 		var logo = document.createElement("img");
 		logo.id = "logoGrandeVerde";
 		logo.src = "img/logo_verde_cima.png";
 		logo.style.width = "50%";
+		logo.style.zIndex = "-1";
 		logo.className = "imagemCentrada";
 		logo.style.opacity = "0.0";
 		divLogo.appendChild(logo);
 		
-		// CRIAR IMAGEM LOGO AMARELA
+	// CRIAR IMAGEM DA LOGO AMARELA - PARTE DE CIMA
 		var logoAmarela = document.createElement("img");
 		logoAmarela.id = "logoGrandeAmarela";
 		logoAmarela.src = "img/logo_amarela_cima.png";
 		logoAmarela.style.width = "50%";
+		logoAmarela.style.zIndex = "-1";
 		logoAmarela.className = "imagemCentrada";
 		logoAmarela.style.opacity = "0.0";
 		divLogo.appendChild(logoAmarela);
 
+	// CRIAR IMAGEM DA LOGO VERDE - PARTE DE BAIXO
 		var logoInicialBaixo = document.createElement("img");
 		logoInicialBaixo.id = "logoVerdeBaixo";
 		logoInicialBaixo.src = "img/logo_verde_baixo.png";
@@ -136,9 +523,7 @@
 		logoInicialBaixo.style.opacity = "0.0";
 		divLogo.appendChild(logoInicialBaixo);
 		
-		// CRIAR IMAGEM LOGO AMARELA
-		
-
+	// CRIAR IMAGEM LOGO AMARELA - PARTE DE BAIXO
 		var logoAmarelaBaixo = document.createElement("img");
 		logoAmarelaBaixo.id = "logoAmarelaBaixo";
 		logoAmarelaBaixo.src = "img/logo_amarela_baixo.png";
@@ -150,7 +535,7 @@
 		document.body.appendChild(divLogo);
 
 
-		// CRIAR BOTÃO
+	// CRIAR BOTÃO DE ENTRADA
 
 		var botaoDeEntrada = document.createElement("img");
 		botaoDeEntrada.src = "img/play.png";
@@ -160,11 +545,9 @@
 		botaoDeEntrada.style.opacity = "0.0";
 		document.body.appendChild(botaoDeEntrada);
 
-		
 	</script>
+	<script src="https://cdn.plyr.io/3.5.3/plyr.js"></script>
 </body>
-
-
 
 </html>
 
