@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Projeto em HTML</title>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<script type="text/javascript" src="animations2.js"></script>
+	
+	
+</head>
+
+
+<body onload="appear()">
+	<div id="interface">
+		<header id="cabecalho">
+			<div class="titulo"><img src="img/logoPequena2.png" alt=""></div>
+			<div class="menu"><img src="img/hamburger-menu.png" class="hamburger"/></div>
+		</header>
+
+
+	<div id="videoContainer">
+			<img class="fecharContainer" src="img/fechar.png" />
+	    </div>
+
+	    <div id="videoPlayerContainer">
+	    	<div id="bigYellowTitle">
+		            <div class="verticalCentered">
+		            	
+		            </div>
+		            <div class="theTitle">
+		            	
+		            </div>
+		    </div>
+		    <video id="videoplayer" playsinline preload="auto">
+		        <source id="mp4track"
+		            type="video/mp4">
+		    </video>
+
+		</div>
+	    <div id="mainvideo">
+	        <div id="mainvideotimeline">
+	            <div id="mainvideotimelinefragment">
+	                <div id="mainvideotimelineprogress"></div>
+	            </div>
+	        </div>
+	        <div class="darken"></div>
+	        <canvas id="pauzebeeld"></canvas>
+	    </div>
+	    
+	</div>	
+<!--MENU PRINCIPAL-->
+	<div id="home">
+		<div class="container" >
+			<div class="wrapper">
+				<img class="coluna" id="efeitos" src="img/EfeitosMenu2.jpg" onclick="abrirEfeitos()" onmouseover="mouseCliqueEfeitos()" onmouseout="mouseoutEfeitos()"> 
+				<div class="titulosMenus">EFEITOS</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="wrapper">
+				<img class="coluna" id="iniciativas" src="img/iniciativasMenu3.jpg" onclick="abrirIniciativas()" onmouseover="mouseCliqueIniciativas()" onmouseout="mouseoutIniciativas()"> 
+				<div class="titulosMenus">INICIATIVAS</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="wrapper">
+				<img class="coluna" id="desafios" src="img/DesafiosMenu2.jpg" onclick="abrirDesafios()" onmouseover="mouseCliqueDesafios()" onmouseout="mouseoutDesafios()"> 
+				<div class="titulosMenus">DESAFIOS</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="wrapper">
+				<img class="coluna" id="repense" src="img/RepenseMenu2.jpg" onclick="abrirRepense()" onmouseover="mouseCliqueRepense()" onmouseout="mouseoutRepense()"> 
+				<div class="titulosMenus">REPENSE</div>
+			</div>
+		</div>
+	</div>
+	
+
+<!--EFEITOS-->
+	<div id="submenuEfeitos">
+		<div class="container" >
+			<div class="wrapper">
+				<img class="coluna" id="ambiente" src="img/Ambiente.jpg" onclick="abrirAmbiente()" onmouseover="mouseCliqueAmbiente()" onmouseout="mouseoutAmbiente()"> 
+				<div class="titulosMenus">AMBIENTE</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="wrapper">
+				<img class="coluna" id="fome" src="img/Fome.jpg" onclick="abrirFome()" onmouseover="mouseCliqueFome()" onmouseout="mouseoutFome()"> 
+				<div class="titulosMenus">FOME</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="wrapper">
+				<img class="coluna" id="industria" src="img/Industria.jpg" onclick="abrirIndustria()" onmouseover="mouseCliqueIndustria()" onmouseout="mouseoutIndustria()"> 
+				<div class="titulosMenus">INDÚSTRIA</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="wrapper">
+				<img class="coluna" id="casa" src="img/Casa.jpg" onclick="abrirCasa()" onmouseover="mouseCliqueCasa()" onmouseout="mouseoutCasa()"> 
+				<div class="titulosMenus">EM CASA</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script>
+		// CRIAR IMAGEM DA LOGO
+
+		var divLogo = document.createElement("div");
+		var logo = document.createElement("img");
+		logo.id = "logoGrandeVerde";
+		logo.src = "img/logo_verde_cima.png";
+		logo.style.width = "50%";
+		logo.className = "imagemCentrada";
+		logo.style.opacity = "0.0";
+		divLogo.appendChild(logo);
+		
+		// CRIAR IMAGEM LOGO AMARELA
+		var logoAmarela = document.createElement("img");
+		logoAmarela.id = "logoGrandeAmarela";
+		logoAmarela.src = "img/logo_amarela_cima.png";
+		logoAmarela.style.width = "50%";
+		logoAmarela.className = "imagemCentrada";
+		logoAmarela.style.opacity = "0.0";
+		divLogo.appendChild(logoAmarela);
+
+		var logoInicialBaixo = document.createElement("img");
+		logoInicialBaixo.id = "logoVerdeBaixo";
+		logoInicialBaixo.src = "img/logo_verde_baixo.png";
+		logoInicialBaixo.style.width = "50%";
+		logoInicialBaixo.className = "imagemCentradaBaixo";
+		logoInicialBaixo.style.opacity = "0.0";
+		divLogo.appendChild(logoInicialBaixo);
+		
+		// CRIAR IMAGEM LOGO AMARELA
+		
+
+		var logoAmarelaBaixo = document.createElement("img");
+		logoAmarelaBaixo.id = "logoAmarelaBaixo";
+		logoAmarelaBaixo.src = "img/logo_amarela_baixo.png";
+		logoAmarelaBaixo.style.width = "50%";
+		logoAmarelaBaixo.className = "imagemCentradaBaixo";
+		logoAmarelaBaixo.style.opacity = "0.0";
+		divLogo.appendChild(logoAmarelaBaixo);
+
+		document.body.appendChild(divLogo);
+
+
+		// CRIAR BOTÃO
+
+		var botaoDeEntrada = document.createElement("img");
+		botaoDeEntrada.src = "img/play.png";
+		botaoDeEntrada.style.width = "5%";
+		botaoDeEntrada.id = "botaoDeEntrada";
+		botaoDeEntrada.className = "botaoCentrado";
+		botaoDeEntrada.style.opacity = "0.0";
+		document.body.appendChild(botaoDeEntrada);
+
+		
+	</script>
+</body>
+
+
+
+</html>
+
