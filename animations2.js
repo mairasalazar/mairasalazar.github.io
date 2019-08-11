@@ -131,10 +131,10 @@
 
 // ANIMAÇÕES DO MENU PRINCIPAL - MOUSE OVER
 		function mouseCliqueEfeitos(){
-			document.getElementById("efeitos").src="img/efeitosMouseOn.jpg";
+			document.getElementById("efeitos").src="img/EfeitosMouseOn.jpg";
 		}
 		function mouseoutEfeitos(){
-			document.getElementById("efeitos").src = "img/efeitosMenu2.jpg";
+			document.getElementById("efeitos").src = "img/EfeitosMenu2.jpg";
 		}
 		function mouseCliqueIniciativas(){
 			document.getElementById("iniciativas").src="img/iniciativasMouseOn.jpg";
@@ -143,16 +143,16 @@
 			document.getElementById("iniciativas").src = "img/iniciativasMenu2.jpg";
 		}
 		function mouseCliqueDesafios(){
-			document.getElementById("desafios").src="img/desafiosMouseOn.jpg";
+			document.getElementById("desafios").src="img/DesafiosMouseOn.jpg";
 		}
 		function mouseoutDesafios(){
-			document.getElementById("desafios").src = "img/desafiosMenu2.jpg";
+			document.getElementById("desafios").src = "img/DesafiosMenu2.jpg";
 		}
 		function mouseCliqueRepense(){
-			document.getElementById("repense").src="img/repenseMouseOn.jpg";
+			document.getElementById("repense").src="img/RepenseMouseOn.jpg";
 		}
 		function mouseoutRepense(){
-			document.getElementById("repense").src = "img/repenseMenu2.jpg";
+			document.getElementById("repense").src = "img/RepenseMenu2.jpg";
 		}
 
 
@@ -166,28 +166,28 @@
 
 // ANIMAÇÕES DO MENU EFEITOS - MOUSE OVER
 		function mouseCliqueAmbiente(){
-			document.getElementById("ambiente").src="img/ambienteMouseOn.jpg";
+			document.getElementById("ambiente").src="img/AmbienteMouseOn.jpg";
 		}
 		function mouseoutAmbiente(){
-			document.getElementById("ambiente").src = "img/ambiente.jpg";
+			document.getElementById("ambiente").src = "img/Ambiente.jpg";
 		}
 		function mouseCliqueFome(){
-			document.getElementById("fome").src="img/fomeMouseOn.jpg";
+			document.getElementById("fome").src="img/FomeMouseOn.jpg";
 		}	
 		function mouseoutFome(){
 			document.getElementById("fome").src = "img/Fome.jpg";
 		}
 		function mouseCliqueIndustria(){
-			document.getElementById("industria").src="img/industriaMouseOn.jpg";
+			document.getElementById("industria").src="img/IndustriaMouseOn.jpg";
 		}
 		function mouseoutIndustria(){
 			document.getElementById("industria").src = "img/Industria.jpg";
 		}
 		function mouseCliqueCasa(){
-			document.getElementById("casa").src="img/casaMouseOn.jpg";
+			document.getElementById("casa").src="img/CasaMouseOn.jpg";
 		}
 		function mouseoutCasa(){
-			document.getElementById("casa").src = "img/casa.jpg";
+			document.getElementById("casa").src = "img/Casa.jpg";
 		}
 
 // ABRIR SUBMENUS DE EFEITOS
@@ -228,25 +228,25 @@
 
 // ANIMAÇÕES DO MENU INICIATIVAS - MOUSE OVER
 		function mouseCliqueFrutaFeia(){
-			document.getElementById("frutaFeia").src="img/frutafeiaMouseOn.jpg";
+			document.getElementById("frutaFeia").src="img/FrutafeiaMouseOn.jpg";
 		}
 		function mouseoutFrutaFeia(){
 			document.getElementById("frutaFeia").src = "img/Frutafeia.jpg";
 		}
 		function mouseCliqueLipor(){
-			document.getElementById("lipor").src="img/liporMouseOn.jpg";
+			document.getElementById("lipor").src="img/LiporMouseOn.jpg";
 		}
 		function mouseoutLipor(){
 			document.getElementById("lipor").src = "img/Lipor.jpg";
 		}
 		function mouseCliqueFairMeals(){
-			document.getElementById("fairMeals").src="img/fairmealsMouseOn.jpg";
+			document.getElementById("fairMeals").src="img/FairmealsMouseOn.jpg";
 		}
 		function mouseoutFairMeals(){
 			document.getElementById("fairMeals").src = "img/Fairmeals.jpg";
 		}
 		function mouseCliqueGoodAfter(){
-			document.getElementById("goodAfter").src="img/goodafterMouseOn.jpg";
+			document.getElementById("goodAfter").src="img/GoodafterMouseOn.jpg";
 		}
 		function mouseoutGoodAfter(){
 			document.getElementById("goodAfter").src = "img/Goodafter.jpg";
@@ -316,23 +316,23 @@
 
 // ANIMAÇÕES DO MENU DESAFIOS - MOUSE OVER
 		function mouseCliqueSeguranca(){
-			document.getElementById("seguranca").src="img/segurancaMouseOn.jpg";
+			document.getElementById("seguranca").src="img/SegurancaMouseOn.jpg";
 		}
 		function mouseoutSeguranca(){
-			document.getElementById("seguranca").src = "img/seguranca.jpg";
+			document.getElementById("seguranca").src = "img/Seguranca.jpg";
 		}
 		function mouseCliqueMentalidade(){
-			document.getElementById("mentalidade").src="img/mentalidadeMouseOn.jpg";
+			document.getElementById("mentalidade").src="img/MentalidadeMouseOn.jpg";
 		}
 		function mouseoutMentalidade(){
 			document.getElementById("mentalidade").src = "img/Mentalidade.jpg";
 		}
 
 		function mouseCliqueNutricao(){
-			document.getElementById("nutricao").src="img/nutricaoMouseOn.jpg";
+			document.getElementById("nutricao").src="img/NutricaoMouseOn.jpg";
 		}
 		function mouseoutNutricao(){
-			document.getElementById("nutricao").src = "img/nutricao.jpg";
+			document.getElementById("nutricao").src = "img/Nutricao.jpg";
 		}
 
 
@@ -394,19 +394,19 @@
 
 // ANIMAÇÕES DO MENU REPENSE - MOUSE OVER
 		function mouseCliqueBolo(){
-			document.getElementById("bolo").src="img/boloMouseOn.jpg";
+			document.getElementById("bolo").src="img/BoloMouseOn.jpg";
 		}
 		function mouseoutBolo(){
 			document.getElementById("bolo").src = "img/Bolo.jpg";
 		}
 		function mouseCliqueCasca(){
-			document.getElementById("casca").src="img/cascaMouseOn.jpg";
+			document.getElementById("casca").src="img/CascaMouseOn.jpg";
 		}
 		function mouseoutCasca(){
 			document.getElementById("casca").src = "img/Casca.jpg";
 		}
 		function mouseCliqueTapenade(){
-			document.getElementById("tapenade").src="img/tapenadeMouseOn.jpg";
+			document.getElementById("tapenade").src="img/TapenadeMouseOn.jpg";
 		}
 		function mouseoutTapenade(){
 			document.getElementById("tapenade").src = "img/Tapenade.jpg";
